@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Health Incident Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+  <style>
+    /* Modal backdrop animation */
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    dialog {
+      animation: slideUp 0.3s ease-out;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-emerald-100 via-white to-teal-100 
+             dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 
+             flex items-center justify-center px-4 py-10">
+
+  <div class="w-full max-w-3xl">
+
+    <div class="backdrop-blur-xl bg-white/80 dark:bg-gray-900/70 
+                border border-white/40 dark:border-gray-700 
+                shadow-2xl rounded-3xl overflow-hidden">
+
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-500 p-8 text-white text-center">
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">
+          Public Health Incident Report
+        </h1>
+        <p class="mt-2 text-sm text-emerald-100">
+          For medical emergencies, please contact your local emergency hotline immediately.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form id="reportForm" class="p-8 sm:p-10 space-y-8">
+
+        <!-- Incident Details -->
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            Incident Details
+          </h2>
+
+          <div class="space-y-6">
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Type of Health Concern
+              </label>
+              <select id="healthConcern" required
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+                <option value="">Select Type</option>
+                <option>Communicable Disease</option>
+                <option>Food Poisoning</option>
+                <option>Unsanitary Establishment</option>
+                <option>Water Contamination</option>
+                <option>Improper Waste Disposal</option>
+                <option>Animal Bite / Rabies Concern</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Location of Incident
+              </label>
+              <input type="text" id="location" placeholder="Street, Barangay, City"
+                required
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm text-gray-600 dark:text-gray-400">
+                  Date Observed
+                </label>
+                <input type="date" id="dateObserved" required
+                  class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                         dark:bg-gray-800 dark:text-white px-4 py-3
+                         focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+              </div>
+
+              <div>
+                <label class="block text-sm text-gray-600 dark:text-gray-400">
+                  Time Observed
+                </label>
+                <input type="time" id="timeObserved"
+                  class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                         dark:bg-gray-800 dark:text-white px-4 py-3
+                         focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Description
+              </label>
+              <textarea id="description" rows="4" placeholder="Provide detailed information..."
+                required
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition"></textarea>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Photo Upload -->
+        <div>
+          <label class="block text-sm text-gray-600 dark:text-gray-400">
+            Upload Photo (Optional)
+          </label>
+          <input type="file" id="photos" accept="image/*" multiple
+            class="mt-2 block w-full text-sm text-gray-600 dark:text-gray-300
+                   file:mr-4 file:py-2 file:px-4
+                   file:rounded-xl file:border-0
+                   file:text-sm file:font-semibold
+                   file:bg-emerald-50 file:text-emerald-700
+                   hover:file:bg-emerald-100">
+        </div>
+
+        <!-- Reporter Info -->
+        <div class="border-t pt-6 space-y-6">
+
+          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Your Information (Optional)
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Full Name
+              </label>
+              <input type="text" id="fullName"
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Mobile Number / Messenger Account
+              </label>
+              <input type="text" id="contact"
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="pt-4">
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-emerald-600 to-teal-500 
+                   hover:opacity-90 text-white font-semibold 
+                   py-4 rounded-2xl shadow-lg transition duration-300">
+            Submit Report
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Success Modal -->
+  <dialog id="successModal" class="modal rounded-2xl p-0 w-full max-w-md bg-transparent">
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-500 p-6 text-white text-center">
+        <div class="flex justify-center mb-3">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-check-circle text-4xl text-white"></i>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold">Report Submitted!</h3>
+      </div>
+      
+      <!-- Modal Body -->
+      <div class="p-6">
+        <div class="mb-4 text-center">
+          <p class="text-gray-600 dark:text-gray-300 mb-2">Your report has been successfully submitted.</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Reference Number:</p>
+          <p id="ticketNumber" class="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">1</p>
+        </div>
+        
+        <div class="bg-emerald-50 dark:bg-gray-700 rounded-xl p-4 mb-6">
+          <h4 class="font-semibold text-emerald-800 dark:text-emerald-300 mb-2 flex items-center">
+            <i class="fas fa-clipboard-list mr-2"></i> Submitted Details:
+          </h4>
+          <div id="submittedDetails" class="text-sm text-gray-700 dark:text-gray-300 space-y-1">
+            <!-- Details will be filled by JavaScript -->
+          </div>
+        </div>
+        
+        <form method="dialog">
+          <button class="w-full bg-gradient-to-r from-emerald-600 to-teal-500 
+                       hover:opacity-90 text-white font-semibold 
+                       py-3 rounded-xl transition duration-300">
+            <i class="fas fa-check mr-2"></i>Close
+          </button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    // Get form and modal elements
+    const form = document.getElementById('reportForm');
+    const modal = document.getElementById('successModal');
+    const ticketNumberSpan = document.getElementById('ticketNumber');
+    const submittedDetailsDiv = document.getElementById('submittedDetails');
+
+    // Function to format date
+    function formatDate(dateString) {
+      if (!dateString) return 'Not provided';
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString(undefined, options);
+    }
+
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Get form values
+      const healthConcern = document.getElementById('healthConcern').value;
+      const location = document.getElementById('location').value;
+      const dateObserved = document.getElementById('dateObserved').value;
+      const timeObserved = document.getElementById('timeObserved').value;
+      const description = document.getElementById('description').value;
+      const fullName = document.getElementById('fullName').value || 'Anonymous';
+      const contact = document.getElementById('contact').value || 'Not provided';
+
+      // Check if required fields are filled
+      if (!healthConcern || !location || !dateObserved || !description) {
+        alert('Please fill in all required fields');
+        return;
+      }
+
+      // Set ticket number to "1" as example
+      ticketNumberSpan.textContent = "1";
+
+      // Set submitted details
+      submittedDetailsDiv.innerHTML = `
+        <p><span class="font-medium text-emerald-700 dark:text-emerald-300">Concern:</span> ${healthConcern}</p>
+        <p><span class="font-medium text-emerald-700 dark:text-emerald-300">Location:</span> ${location}</p>
+        <p><span class="font-medium text-emerald-700 dark:text-emerald-300">Date:</span> ${formatDate(dateObserved)} ${timeObserved ? 'at ' + timeObserved : ''}</p>
+        <p><span class="font-medium text-emerald-700 dark:text-emerald-300">Reporter:</span> ${fullName}</p>
+      `;
+
+      // Show modal
+      modal.showModal();
+
+      // Optional: Reset form after submission
+      // form.reset();
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+      const dialogDimensions = modal.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        modal.close();
+      }
+    });
+  </script>
+</body>
+</html>

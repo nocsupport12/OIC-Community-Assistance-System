@@ -1,0 +1,94 @@
+{
+  "en": [
+    {
+      "id": 1,
+      "category": "billing",
+      "keywords": ["bill", "payment", "pay", "charge", "invoice", "due", "balance", "statement", "receipt"],
+      "content": "Billing cycles run from 1st to 30th of each month. Bills are generated on the 1st and due by the 15th. Late payment fee of ₱100 applies after 30 days. You can view your bill online through our customer portal or mobile app.",
+      "faqs": [
+        {"q": "How to pay?", "a": "Pay via GCash, PayMaya, bank transfer, credit card, or over-the-counter at 7-Eleven, Bayad Center, SM Bills Payment, Cebuana, and LBC."},
+        {"q": "When is due date?", "a": "Payments are due by the 15th of each month."},
+        {"q": "Payment arrangements?", "a": "You can request payment extension up to 5 days. Call our billing hotline at 02-8888-1234."}
+      ],
+      "source": "billing_department"
+    },
+    {
+      "id": 2,
+      "category": "internet",
+      "keywords": ["speed", "slow", "fast", "connection", "disconnect", "lag", "buffering", "streaming", "download", "upload"],
+      "content": "Internet speed tiers: Basic 25Mbps (₱1299), Pro 50Mbps (₱1899), Premium 100Mbps (₱2499), Gamer 200Mbps (₱3499). Actual speeds may vary by 10-20% due to network conditions, time of day, and device capabilities. For optimal speed, use wired connection and 5GHz WiFi band.",
+      "faqs": [
+        {"q": "Why slow?", "a": "Slow speeds can be due to network congestion (7-11pm), router placement, too many connected devices, or signal interference."},
+        {"q": "Speed test?", "a": "Use speedtest.net or fast.com. Connect via Ethernet for accurate results. Expected: 80% of plan speed."}
+      ],
+      "source": "technical_department"
+    },
+    {
+      "id": 3,
+      "category": "technical",
+      "keywords": ["router", "modem", "wifi", "reset", "reboot", "offline", "no internet", "red light", "blinking", "fiber", "ONT"],
+      "content": "Common router models: Huawei HG8245, ZTE F660, FiberHome AN5506. Reset procedure: Press and hold reset button for 10 seconds using paperclip. For fiber connections: LOS red light means no signal - check if fiber cable is bent or damaged. PON light should be solid green.",
+      "faqs": [
+        {"q": "Restart steps?", "a": "1. Unplug router for 30 seconds. 2. Plug back in. 3. Wait 2-3 minutes for lights to stabilize. 4. Test connection."},
+        {"q": "Red light?", "a": "Red LOS light means fiber signal lost. Check cable connections and report to technical support."}
+      ],
+      "source": "technical_database"
+    },
+    {
+      "id": 4,
+      "category": "coverage",
+      "keywords": ["area", "available", "service", "location", "barangay", "city", "province", "installation", "applicable"],
+      "content": "Current coverage areas: Metro Manila (all cities), Cebu (Cebu City, Mandaue, Lapu-Lapu, Talisay), Davao (Davao City only), Pampanga (Angeles City, San Fernando), Laguna (Calamba, Santa Rosa, Biñan), Cavite (Bacoor, Imus, Dasmariñas). Expanding to Iloilo, Bacolod, Cagayan de Oro by Q3 2024.",
+      "faqs": [
+        {"q": "Check availability?", "a": "Visit our website and enter your address for real-time availability check, or call 02-8888-1234."},
+        {"q": "Installation time?", "a": "Standard installation takes 2-5 business days after application approval."}
+      ],
+      "source": "sales_department"
+    },
+    {
+      "id": 5,
+      "category": "promos",
+      "keywords": ["promo", "discount", "offer", "sale", "free", "upgrade", "new subscriber", "existing customer"],
+      "content": "Current promotions: New subscribers get 50% off first 3 months. Refer a friend: Both get 1 month free. Senior citizen/PWD discount: 20% off monthly bill (requirements: valid ID). Free installation for all plans until Dec 2024. No lock-in period for Basic plan.",
+      "faqs": [
+        {"q": "Senior discount?", "a": "20% discount for senior citizens and PWD. Submit valid ID at any branch or upload via app."},
+        {"q": "Free installation?", "a": "Yes, free installation for all plans until December 2024 (worth ₱1,500)."}
+      ],
+      "source": "marketing_department"
+    },
+    {
+      "id": 6,
+      "category": "account",
+      "keywords": ["account", "login", "password", "username", "profile", "update", "change", "forgot", "reset", "verify"],
+      "content": "Account management: Reset password via 'Forgot Password' on login page. Update contact info through customer portal. Account verification requires valid ID and recent bill. Multiple accounts can be linked to one email.",
+      "faqs": [
+        {"q": "Forgot password?", "a": "Click 'Forgot Password' on login page. Reset link sent to email within 5 minutes."},
+        {"q": "Change address?", "a": "Update address through portal under Profile Settings. Moving to new area? Check coverage first."}
+      ],
+      "source": "customer_service"
+    }
+  ],
+  "tl": [
+    {
+      "id": 1,
+      "category": "billing",
+      "keywords": ["bayad", "singil", "bill", "due", "invoice", "resibo", "balance"],
+      "content": "Ang billing cycle ay mula ika-1 hanggang ika-30 ng buwan. Lumalabas ang bill tuwing ika-1 at due date ay ika-15. May multang ₱100 pag lampas ng 30 araw. Maaaring tingnan ang bill online sa customer portal o mobile app.",
+      "faqs": [
+        {"q": "Paano magbayad?", "a": "Pwedeng magbayad sa GCash, PayMaya, bank transfer, credit card, o over-the-counter sa 7-Eleven, Bayad Center, SM Bills Payment, Cebuana, at LBC."},
+        {"q": "Kailan due date?", "a": "Ang bills ay due tuwing ika-15 ng buwan."}
+      ],
+      "source": "billing_department"
+    },
+    {
+      "id": 2,
+      "category": "internet",
+      "keywords": ["bagal", "mabilis", "speed", "koneksyon", "disconnect", "buffering", "streaming"],
+      "content": "Internet speed plans: Basic 25Mbps (₱1299), Pro 50Mbps (₱1899), Premium 100Mbps (₱2499), Gamer 200Mbps (₱3499). Ang actual speed ay maaaring mag-iba ng 10-20% dahil sa network condition, oras, at device capabilities.",
+      "faqs": [
+        {"q": "Bakit mabagal?", "a": "Maaaring dahil sa maraming gumagamit (7-11pm), maling placement ng router, maraming connected devices, o signal interference."}
+      ],
+      "source": "technical_department"
+    }
+  ]
+}

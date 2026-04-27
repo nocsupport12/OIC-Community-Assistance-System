@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Permit Application</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-gray-100 via-white to-blue-100 
+             dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 
+             flex items-center justify-center px-4 py-10">
+
+  <div class="w-full max-w-4xl">
+
+    <div class="backdrop-blur-xl bg-white/80 dark:bg-gray-900/70 
+                border border-white/40 dark:border-gray-700 
+                shadow-2xl rounded-3xl overflow-hidden">
+
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-blue-700 to-sky-600 p-8 text-white text-center">
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">
+          Construction / Engineering Permit Application
+        </h1>
+        <p class="mt-2 text-sm text-blue-100">
+          Submit this form to apply for construction, renovation, or engineering-related permits.
+        </p>
+      </div>
+
+      <!-- Form -->
+      <form class="p-8 sm:p-10 space-y-10">
+
+        <!-- Project Information -->
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            Project Information
+          </h2>
+
+          <div class="space-y-6">
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Project Name
+              </label>
+              <input type="text" placeholder="Name of Project" required
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Project Location
+              </label>
+              <input type="text" placeholder="Street, Barangay, City" required
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+              <div>
+                <label class="block text-sm text-gray-600 dark:text-gray-400">
+                  Type of Work
+                </label>
+                <select required
+                  class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                         dark:bg-gray-800 dark:text-white px-4 py-3
+                         focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                  <option value="">Select Type</option>
+                  <option>New Construction</option>
+                  <option>Renovation / Addition</option>
+                  <option>Demolition</option>
+                  <option>Structural Alteration</option>
+                  <option>Electrical / Mechanical Work</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm text-gray-600 dark:text-gray-400">
+                  Estimated Cost (PHP)
+                </label>
+                <input type="number" min="0" step="0.01" required
+                  class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                         dark:bg-gray-800 dark:text-white px-4 py-3
+                         focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Applicant Information -->
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            Applicant / Owner Information
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Full Name
+              </label>
+              <input type="text" required
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Contact Number
+              </label>
+              <input type="tel" required
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Email Address
+              </label>
+              <input type="email"
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Professional License Number (if applicable)
+              </label>
+              <input type="text"
+                class="mt-2 w-full rounded-2xl border border-gray-200 dark:border-gray-700 
+                       dark:bg-gray-800 dark:text-white px-4 py-3
+                       focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Documents Upload -->
+        <div>
+          <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-6">
+            Required Documents
+          </h2>
+
+          <div class="space-y-6">
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Upload Blueprints / Structural Plans
+              </label>
+              <input type="file" accept=".pdf,.jpg,.png" multiple
+                class="mt-2 block w-full text-sm text-gray-600 dark:text-gray-300
+                       file:mr-4 file:py-2 file:px-4
+                       file:rounded-xl file:border-0
+                       file:text-sm file:font-semibold
+                       file:bg-blue-50 file:text-blue-700
+                       hover:file:bg-blue-100">
+            </div>
+
+            <div>
+              <label class="block text-sm text-gray-600 dark:text-gray-400">
+                Upload Barangay Clearance / ID
+              </label>
+              <input type="file" accept=".pdf,.jpg,.png" multiple
+                class="mt-2 block w-full text-sm text-gray-600 dark:text-gray-300
+                       file:mr-4 file:py-2 file:px-4
+                       file:rounded-xl file:border-0
+                       file:text-sm file:font-semibold
+                       file:bg-blue-50 file:text-blue-700
+                       hover:file:bg-blue-100">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="pt-4">
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-blue-700 to-sky-600 
+                   hover:opacity-90 text-white font-semibold 
+                   py-4 rounded-2xl shadow-lg transition duration-300">
+            Submit Permit Application
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>

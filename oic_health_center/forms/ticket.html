@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ticket Form</title>
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white p-8 rounded-2xl shadow-lg w-96">
+
+    <h2 class="text-2xl font-bold text-center mb-4">Submit Ticket</h2>
+
+    <!-- Status Message -->
+    <div id="statusMessage" class="text-center font-semibold mb-4"></div>
+
+    <form id="ticketForm" class="space-y-4">
+
+        <input 
+            type="text" 
+            id="ticket"
+            placeholder="Ticket Number"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+
+        <input 
+            type="text" 
+            id="phone"
+            placeholder="Phone Number"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+
+        <button 
+            type="submit"
+            class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+          
+        >
+            Submit
+        </button>
+
+    </form>
+</div>
+
+<script>
+const form = document.getElementById("ticketForm");
+const statusMessage = document.getElementById("statusMessage");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const ticket = document.getElementById("ticket").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    if(ticket === "" || phone === "") {
+        statusMessage.textContent = "Please fill in all fields";
+        statusMessage.className = "text-center font-semibold mb-4 text-orange-500";
+    } else {
+        statusMessage.textContent = "Status: Pending";
+        statusMessage.className = "text-center font-semibold mb-4 text-orange-300";
+        
+        // Optional: Clear the form after successful submission
+        // document.getElementById("ticket").value = "";
+        // document.getElementById("phone").value = "";
+        
+        // Optional: You can add code here to actually submit the data to a server
+        // fetch('your-server-endpoint', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ ticket, phone }),
+        //     headers: { 'Content-Type': 'application/json' }
+        // });
+    }
+});
+</script>
+
+</body>
+</html>
